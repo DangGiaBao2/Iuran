@@ -19,9 +19,15 @@
     "deploymentTxHash": null
   },
   "mainnet": {
-    "status": "not-deployed",
-    "contractId": null,
-    "wasmUploadTxHash": null,
-    "deploymentTxHash": null
+    "status": "deployed",
+    "network": "mainnet",
+    "contractId": "CBL2TOIOA4LDYKCSZR4VLQPJBFJJMOEXVJYRZ7GRYJJK7R7RNLPLOEQJ",
+    "wasmUploadTxHash": "c4e064e3694aea11bae27d8e0b0fcdfc9a16785c0ffc391aeb59a036e8321a78",
+    "deploymentTxHash": "c0a542bf149a1a6d155872be9d7ead56a03107ee17132c8e1c35258d04e28b73",
+    "functionalTxHashes": {
+      "createPlan": "15049a69130324f5a010b036630623340384334d7cc6b6252d2827a5b4104cbb",
+      "subscribe": "77a0b82515cfa85314b3e0a899ba2cc0d9104f2e3bf3b7e57d04631eff063e77",
+      "charge": "e50f08624890c5fc691ff566051f26f9c9e8a9ad5946fd9f184dabda3f3e7d28"
+    }
   }
 }
