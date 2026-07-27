@@ -1,0 +1,27 @@
+{
+  "projectId": "022",
+  "contractName": "iuran-subscription-policy-contract",
+  "sdkVersion": "27.0.2",
+  "wasmPath": "contracts/subscription-policy/target/wasm32v1-none/release/iuran_subscription_policy_contract.wasm",
+  "wasmSha256": "c14f51bb77191117b0ba7060a1a22700e1fad7d218a00251893e6fe6ac3ea948",
+  "local": {
+    "status": "implemented",
+    "testsPassed": 2,
+    "flows": [
+      "create_plan -> subscribe -> charge -> cancel",
+      "duplicate charge ID rejected"
+    ]
+  },
+  "testnet": {
+    "status": "not-deployed",
+    "contractId": null,
+    "wasmUploadTxHash": null,
+    "deploymentTxHash": null
+  },
+  "mainnet": {
+    "status": "not-deployed",
+    "contractId": null,
+    "wasmUploadTxHash": null,
+    "deploymentTxHash": null
+  }
+}
