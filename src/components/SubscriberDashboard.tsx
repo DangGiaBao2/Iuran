@@ -10,6 +10,7 @@ import {
   ShieldCheck,
 } from 'lucide-react';
 import { toast } from 'sonner';
+import MainnetChargeAction from './MainnetChargeAction';
 
 interface PendingCharge {
   charge: {
@@ -129,6 +130,7 @@ export default function SubscriberDashboard({ subscriberAddress }: Props) {
 
   return (
     <div className="space-y-6">
+      <MainnetChargeAction />
       {/* Member info card */}
       <div className="bg-white rounded-xl border border-slate-200 shadow-sm px-4 sm:px-6 py-5 flex flex-wrap items-center gap-4">
         <div className="w-12 h-12 rounded-full bg-sky-100 flex items-center justify-center">
@@ -174,7 +176,7 @@ export default function SubscriberDashboard({ subscriberAddress }: Props) {
                   Monthly charge — {subscription.subscriberName}
                 </div>
                 <div className="text-xs text-slate-500 mt-0.5">
-                  Cycle: {charge.cycleId} · Soroban SAC transfer (simulated in demo)
+                  Cycle: {charge.cycleId} · demo approval (not a blockchain transaction)
                 </div>
               </div>
               <div className="text-right ml-auto">

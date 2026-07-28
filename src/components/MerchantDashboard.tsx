@@ -164,7 +164,7 @@ export default function MerchantDashboard({ merchantId }: Props) {
               FitLife Monthly Subscriptions
             </h2>
             <p className="text-xs text-slate-500 mt-0.5">
-              Plan: FitLife Monthly — 20 USDC / 30 days · Soroban SAC contract
+              Plan: FitLife Monthly — 20 USDC / 30 days · demo billing controls
             </p>
           </div>
           <button
@@ -174,7 +174,7 @@ export default function MerchantDashboard({ merchantId }: Props) {
             className="self-start sm:self-auto flex items-center gap-2 bg-sky-600 hover:bg-sky-700 text-white px-4 sm:px-5 py-2.5 rounded-lg font-semibold text-sm transition-all disabled:opacity-60 shadow-sm"
           >
             <RefreshCw className={`w-4 h-4 ${running ? 'animate-spin' : ''}`} />
-            {running ? 'Running…' : 'Run Billing Cycle'}
+            {running ? 'Running…' : 'Demo only · Run Billing Cycle'}
           </button>
         </div>
 
@@ -254,8 +254,7 @@ export default function MerchantDashboard({ merchantId }: Props) {
       <div className="bg-purple-50 border border-purple-200 rounded-xl px-5 py-3 flex items-start gap-3">
         <AlertCircle className="w-4 h-4 text-purple-500 mt-0.5 shrink-0" />
         <div className="text-xs text-purple-700">
-          <span className="font-bold">Soroban SAC transfer</span> — approve_charge(subscriber, merchant, amount, cycle_id) simulated via Soroban RPC.{' '}
-          <span className="italic">(simulated in demo)</span>
+          <span className="font-bold">Demo-only billing state</span> — the Freighter Mainnet action is available in the Subscriber tab.{' '}
           {' · '}
           <span className="font-semibold">Sponsored reserves (CAP-33)</span>: new subscriber trustlines are gasless.
         </div>

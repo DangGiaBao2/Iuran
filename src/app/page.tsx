@@ -36,10 +36,10 @@ export default function HomePage() {
           </div>
           <div className="ml-auto flex items-center gap-2">
             <span className="text-xs bg-sky-700 text-sky-100 px-2 py-1 rounded-full font-medium">
-              Stellar Testnet
+              Stellar Mainnet contract
             </span>
             <span className="text-xs bg-sky-500 text-white px-2 py-1 rounded-full font-medium">
-              Soroban SAC
+              Demo data + Freighter Mainnet action
             </span>
           </div>
         </div>
