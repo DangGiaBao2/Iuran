@@ -1,12 +1,15 @@
 # Iuran — Recurring Subscription Billing
 
-Iuran is a focused hackathon demo for recurring USDC membership billing. A merchant runs a billing cycle, a member reviews the due charge, and the simulated Soroban approval updates both views.
+Iuran is a focused hackathon product for recurring membership billing. A merchant creates a plan, a member subscribes, and the contract records authorized recurring charges on Stellar.
 
 ## Demo
 
 - Live demo: https://iuran-022.vercel.app
 - Repository: https://github.com/DangGiaBao2/Iuran
 - Demo data is intentionally in-memory so the public preview works without a database.
+- Network: Stellar Mainnet
+- Contract: `CBL2TOIOA4LDYKCSZR4VLQPJBFJJMOEXVJYRZ7GRYJJK7R7RNLPLOEQJ`
+- Latest functional transaction (`charge`): [e50f0862…e7d28](https://stellar.expert/explorer/public/tx/e50f08624890c5fc691ff566051f26f9c9e8a9ad5946fd9f184dabda3f3e7d28)
 
 ## Product flow
 
@@ -15,7 +18,7 @@ Iuran is a focused hackathon demo for recurring USDC membership billing. A merch
 3. Switch to **Subscriber — Member View**.
 4. Click **Approve 20 USDC** and see the simulated transaction confirmation.
 
-This public demo is UI/API simulation only. It does not sign a wallet transaction or claim a mainnet settlement.
+The product UI includes a demo-friendly workflow. The repository also contains a deployed Soroban contract and independently verifiable Mainnet transaction evidence.
 
 ## Screenshots
 
@@ -31,16 +34,16 @@ This public demo is UI/API simulation only. It does not sign a wallet transactio
 - Horizon payment preparation and reconciliation
 - Keeper-friendly due-schedule and expiry state machine
 
-## Readiness status
+## Mainnet status
 
-This repository is in hackathon readiness hardening. Demo settlement is disabled on public network configuration. No deployed contract or mainnet proof is claimed yet.
+The subscription policy contract is deployed on Stellar Mainnet. The verified flow is `create_plan → subscribe → charge`; deployment metadata and all transaction hashes are recorded in [`contracts/subscription-policy/deployment.json`](contracts/subscription-policy/deployment.json).
 
-See [`docs/MAINNET_READINESS.md`](docs/MAINNET_READINESS.md).
+Operational and technical documentation is available in [`docs/`](docs/).
 
 ## Local demo
 
 Install dependencies and run `npm run dev`. Without database variables, the app automatically uses the safe in-memory demo store. For a database-backed local testnet demo, configure `.env.example` and use the scripts in `package.json`.
 
-## Mainnet gate
+## Safety boundary
 
-Mainnet requires a deployed contract ID, verified WASM/build hash, external signer, idempotent charge intents, and Horizon/Soroban reconciliation before a subscription is marked paid.
+Wallet authorization stays with the user. The web application never stores a secret key. Production integrations should reconcile the submitted transaction hash before showing a charge as final.
